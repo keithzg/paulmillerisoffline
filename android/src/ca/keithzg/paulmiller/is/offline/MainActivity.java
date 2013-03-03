@@ -25,12 +25,12 @@ public class MainActivity extends Activity {
 
         tv = new TextView(this);
         this.setContentView(tv);
-        //TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
+        TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
         
         java.util.Date date = new java.util.Date();
         Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
         
-        Date internetTimeForPaul = new Date("03/04/2013 00:00:00");
+        Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
         Calendar paulCal = Calendar.getInstance();paulCal.setTime(internetTimeForPaul);
        
         try {
@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
             java.util.Date date = new java.util.Date();
             Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
             
-            Date internetTimeForPaul = new Date("03/04/2013 00:00:00");
+            Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
             Calendar paulCal = Calendar.getInstance();paulCal.setTime(internetTimeForPaul);
             
             long days = daysBetween(nowCal, paulCal);
@@ -120,6 +120,7 @@ public class MainActivity extends Activity {
             int hours = Math.abs(Integer.parseInt(dateFormat.format(date)) - 24);
             if (hours == 24) {
            	 hours = 0;
+           	 days++;
             }
 
             dateFormat = new SimpleDateFormat("mm");
@@ -145,7 +146,7 @@ public class MainActivity extends Activity {
                 seconds
                 );  
 
-                tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 48);
+                tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 56);
                 tv.setText(paulTimeLeft);
         }
     }
