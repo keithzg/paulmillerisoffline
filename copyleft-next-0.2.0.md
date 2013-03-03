@@ -128,21 +128,10 @@ To the extent permission to make copies of a Covered Work is necessary
    Version.
 
 ## 12. No Warranty                                                       
-**                                                                       **
-**     My Work is provided "as-is", without warranty. You bear the risk  **
-**     of using it. To the extent permitted by applicable law, each      **
-**     distributor of My Work excludes the implied warranties of title,  **
-**     merchantability, fitness for a particular purpose and             **
-**     non-infringement.                                                 **
+** My Work is provided "as-is", without warranty. You bear the risk of using it. To the extent permitted by applicable law, each distributor of My Work excludes the implied warranties of title, merchantability, fitness for a particular purpose and non-infringement. **
 
 ## 13. Limitation of Liability                                          
-**                                                                       **
-**     To the extent permitted by applicable law, in no event will any   **
-**     distributor of My Work be liable to You for any damages           **
-**     whatsoever, whether direct, indirect, special, incidental, or     **
-**     consequential damages, whether arising under contract, tort       **
-**     (including negligence), or otherwise, even where the distributor  **
-**     knew or should have known about the possibility of such damages.  **
+** To the extent permitted by applicable law, in no event will any distributor of My Work be liable to You for any damages whatsoever, whether direct, indirect, special, incidental, or consequential damages, whether arising under contract, tort (including negligence), or otherwise, even where the distributor knew or should have known about the possibility of such damages. **
 
 ## 14. Severability
 
