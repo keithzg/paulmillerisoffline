@@ -7,6 +7,20 @@
         android:id="@+id/myImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/pauloff_1080p" />
+        android:src="@drawable/pauloff_480p" />
+ 
+    <TextView
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_marginBottom="20dip"
+        android:layout_gravity="center_horizontal"
+
+        android:padding="12dip"
+        
+        
+        android:textColor="#ede6d7"
+        
+        android:text="This is a bunch of text" />
+
 
 </FrameLayout>
