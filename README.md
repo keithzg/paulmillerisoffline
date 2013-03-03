@@ -1,4 +1,4 @@
-paulmillerisoffline
+Paul Miller Is Offline
 ===================
 
 Android App; countdown to the end of Verge editor Paul Miller's self-imposed exile from the internet.
