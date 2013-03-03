@@ -103,9 +103,6 @@ public class MainActivity extends Activity {
         @Override
         public void onTick(long millisUntilFinished) {
             
-
-            long diff = endTime - millisUntilFinished; 
-            
             DateFormat dateFormat = new SimpleDateFormat();      
             java.util.Date date = new java.util.Date();
             Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
@@ -122,32 +119,37 @@ public class MainActivity extends Activity {
            	 hours = 0;
            	 days++;
             }
+            hours = hours - 1;
 
             dateFormat = new SimpleDateFormat("mm");
             date = new java.util.Date();
             int minutes = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
             if (minutes == 60) {
            	 minutes = 0;
+           	 hours++;
             }
 
             dateFormat = new SimpleDateFormat("ss");
             date = new java.util.Date();
             int seconds = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);  
             if (seconds == 60) {
-           	 seconds = 0;
+            	 seconds = 0;
+            	 minutes++;
             }
+            if (minutes != 0 ) {minutes = minutes - 1;}
 
-
-
-                String paulTimeLeft = String.format(" %d days\n %d hours\n %d minutes\n %d seconds\n",
+            String paulTimeLeft = String.format(" %d days\n %d hours\n %d minutes\n %d seconds\n",
                 days,
                 hours,
                 minutes,
                 seconds
                 );  
 
-                tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 56);
-                tv.setText(paulTimeLeft);
+            tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
+            //SimpleDateFormat dateformatYYYYMMDD = new SimpleDateFormat("yyyy MM dd \nhh mm ss");
+            //String testString = dateformatYYYYMMDD.format(date);
+            //tv.setText(paulTimeLeft + "\n" + testString);
+            tv.setText(paulTimeLeft);
         }
     }
 }
