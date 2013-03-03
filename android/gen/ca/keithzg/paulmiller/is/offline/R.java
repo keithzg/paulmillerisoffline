@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package ca.keithzg.paulmillerisoffline;
+package ca.keithzg.paulmiller.is.offline;
 
 public final class R {
     public static final class attr {
