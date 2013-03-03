@@ -50,10 +50,16 @@ public class MainActivity extends Activity {
              dateFormat = new SimpleDateFormat("mm");
              date = new java.util.Date();
              int minutes = Math.abs(60 - Integer.parseInt(dateFormat.format(date)));
+             if (minutes == 60) {
+            	 minutes = 0;
+             }
 
              dateFormat = new SimpleDateFormat("ss");
              date = new java.util.Date();
              int seconds = Math.abs(60 - Integer.parseInt(dateFormat.format(date)));  
+             if (seconds == 60) {
+            	 seconds = 0;
+             }
 
 
         } catch (ParseException e) {
@@ -119,10 +125,16 @@ public class MainActivity extends Activity {
             dateFormat = new SimpleDateFormat("mm");
             date = new java.util.Date();
             int minutes = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
+            if (minutes == 60) {
+           	 minutes = 0;
+            }
 
             dateFormat = new SimpleDateFormat("ss");
             date = new java.util.Date();
             int seconds = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);  
+            if (seconds == 60) {
+           	 seconds = 0;
+            }
 
 
 
