@@ -199,7 +199,7 @@ public class MainActivity extends FragmentActivity {
         	                4, getActivity().getResources().getDisplayMetrics());
         	        credits.setPadding(padding, padding, padding, padding);
         	        scroller.addView(credits);
-        	        credits.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
+        	        credits.setTextSize(TypedValue.COMPLEX_UNIT_SP, 48);
         	        credits.setGravity(Gravity.CENTER);
         	        credits.setText("Paul Miller is a journalist with" +
         	        		"\nThe Verge" +
