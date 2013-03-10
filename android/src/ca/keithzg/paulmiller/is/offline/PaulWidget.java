@@ -43,18 +43,6 @@ public class PaulWidget extends AppWidgetProvider {
 	        public IBinder onBind(Intent intent) {
 	            return null;
 	        }
-
-	        /**
-	         * Regular expression that splits "Word of the day" entry into word
-	         * name, word type, and the first description bullet point.
-	         */
-	        private static final String WOTD_PATTERN =
-	            "(?s)\\{\\{wotd\\|(.+?)\\|(.+?)\\|([^#\\|]+).*?\\}\\}";
-
-	        /**
-	         * Build a widget update to show the current Wiktionary
-	         * "Word of the day." Will block until the online API returns.
-	         */
 	        public RemoteViews buildUpdate(Context context) {
 	            
 	            RemoteViews views = null;

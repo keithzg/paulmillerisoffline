@@ -20,7 +20,7 @@
         
         android:textColor="#ede6d7"
         
-        android:text="This is a bunch of text" />
+        android:text="For now this widget doesn't work.\nBut hey, doesn't it look like it'll be cool?" />
 
 
 </FrameLayout>

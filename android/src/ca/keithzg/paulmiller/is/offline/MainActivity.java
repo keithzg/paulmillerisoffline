@@ -26,7 +26,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.util.Log;
+//import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -279,7 +279,7 @@ public class MainActivity extends FragmentActivity {
             //String testString = dateformatYYYYMMDD.format(date);
             //tv.setText(paulTimeLeft + "\n" + testString);
             //tv.setText(paulTimeLeft);
-            Log.w("paulTimer: ", paulTimeLeft);
+            //Log.w("paulTimer: ", paulTimeLeft);
         }
     }
 
