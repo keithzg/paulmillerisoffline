@@ -136,6 +136,8 @@ public class MainActivity extends FragmentActivity {
      	        
      	        java.util.Date date = new java.util.Date();
      	        Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
+     	        Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
+     	    	long ontickseconds = internetTimeForPaul.getTime();
 
      	        ScrollView scroller = new ScrollView(getActivity());
      	        
@@ -146,7 +148,7 @@ public class MainActivity extends FragmentActivity {
      	        
      	        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
      	        tv.setText("Initial text, to be replaced before you even see it.");
-     	        MyCount1 counter1 = new MyCount1(300000,1000);
+     	        MyCount1 counter1 = new MyCount1(ontickseconds,1000);
      	    	counter1.start();
      	        scroller.addView(tv);
      	        return scroller;
