@@ -72,6 +72,7 @@ public class MainActivity extends FragmentActivity {
          mViewPager = (ViewPager) findViewById(R.id.viewpager);
          mMyFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
          mViewPager.setAdapter(mMyFragmentPagerAdapter);
+         mViewPager.setCurrentItem(1);
     }
 
     private static class MyFragmentPagerAdapter extends FragmentPagerAdapter {
@@ -198,7 +199,16 @@ public class MainActivity extends FragmentActivity {
         	        credits.setPadding(padding, padding, padding, padding);
         	        scroller.addView(credits);
         	        credits.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
-        	        credits.setText("Paul Miller is a journalist with The Verge\n \nKeith Z-G (poorly) coded this app \n ");
+        	        credits.setText("Paul Miller is a journalist with The Verge" +
+        	        		"\n" +
+        	        		"\n" +
+        	        		"Keith Z-G (poorly) coded this app" +
+        	        		"\n" +
+        	        		"\n" +
+        	        		"Images by 'OCD'" +
+        	        		"\n" +
+        	        		"\n" +
+        	        		"<- Basic | Fancy ->");
         	        return scroller;
         	    }
         	}
