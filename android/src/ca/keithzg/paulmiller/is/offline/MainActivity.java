@@ -32,6 +32,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 //import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -199,7 +200,9 @@ public class MainActivity extends FragmentActivity {
         	        credits.setPadding(padding, padding, padding, padding);
         	        scroller.addView(credits);
         	        credits.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
-        	        credits.setText("Paul Miller is a journalist with The Verge" +
+        	        credits.setGravity(Gravity.CENTER);
+        	        credits.setText("Paul Miller is a journalist with" +
+        	        		"\nThe Verge" +
         	        		"\n" +
         	        		"\n" +
         	        		"Keith Z-G (poorly) coded this app" +
