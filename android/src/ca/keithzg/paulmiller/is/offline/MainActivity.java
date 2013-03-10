@@ -10,6 +10,7 @@ import android.net.ParseException;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.app.Activity;
+import android.util.Log;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -22,6 +23,11 @@ import java.util.TimeZone;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -32,6 +38,8 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.os.Bundle;
@@ -49,7 +57,7 @@ public class MainActivity extends FragmentActivity {
 	
  	long milliseconds;
 
-    private static final int NUMBER_OF_PAGES = 2;
+    private static final int NUMBER_OF_PAGES = 3;
 
     private ViewPager mViewPager;
     private MyFragmentPagerAdapter mMyFragmentPagerAdapter;
@@ -197,7 +205,56 @@ public class MainActivity extends FragmentActivity {
         	    }
         	}
          public class Fragment3 extends Fragment { 
-        	    	    
+        	 public Fragment3 newInstance(int index) {
+      	        Fragment3 f = new Fragment3();
+
+      	        // Supply index input as an argument.
+      	        Bundle args = new Bundle();
+      	        args.putInt("index", index);
+      	        f.setArguments(args);
+
+      	        return f;
+      	     }
+        	
+        	 public int getShownIndex() {
+     	        return getArguments().getInt("index", 0);
+     	    }
+        	 
+        	
+			public View onCreateView(LayoutInflater inflater, ViewGroup container,
+     	            Bundle savedInstanceState) {
+     	        if (container == null) {
+     	            // We have different layouts, and in one of them this
+     	            // fragment's containing frame doesn't exist.  The fragment
+     	            // may still be created from its saved state, but there is
+     	            // no reason to try to create its view hierarchy because it
+     	            // won't be displayed.  Note this is not needed -- we could
+     	            // just run the code below, where we would create and return
+     	            // the view hierarchy; it would just never be used.
+     	            return null;
+     	        }
+
+     	        ScrollView scroller = new ScrollView(getActivity());
+     	        ImageView rock = new ImageView(getActivity());
+     	        //int padding = (int)TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+     	          //      4, getActivity().getResources().getDisplayMetrics());
+     	        //rock.setPadding(padding, padding, padding, padding);
+     	        //Resources res = getResources();
+     	        //Drawable rockBackground = res.getDrawable(R.drawable.pauloff_480p);
+     	        Bitmap rockBmap = BitmapFactory.decodeResource(getResources(), R.drawable.pauloff_480p);
+     	        
+     	        
+     	        scroller.addView(rock);
+     	        int finalHeight = scroller.getMeasuredHeight();
+     	        int finalWidth = scroller.getMeasuredWidth();
+     	        Log.w("argh", Integer.toString(finalHeight));
+     	        Log.w("argh", Integer.toString(finalWidth));
+     	        Bitmap rockScaled = Bitmap.createScaledBitmap(rockBmap, finalWidth, finalHeight, true);
+     	        Drawable rockDrawable = new BitmapDrawable(getResources(), rockScaled);
+     	        rock.setBackground(rockDrawable);
+     	        return scroller;
+     	    }
+        	 
         	}
          
     }
