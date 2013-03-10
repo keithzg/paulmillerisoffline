@@ -195,71 +195,7 @@ public class MainActivity extends FragmentActivity {
         	    }
         	}
          public class Fragment3 extends Fragment { 
-        	   //your code h// countdowntimer is an abstract class, so extend it and fill in methods
-     	    public class MyCount extends CountDownTimer {
-    	    	//String paulTimeLeft;
-        	 	TextView tv3;
-        	 	//long milliseconds;
-    	        public MyCount(long millisInFuture, long countDownInterval) {
-    	            super(millisInFuture, countDownInterval);
-    	        }
-
-    	        @Override
-    	        public void onFinish() {
-    	        }
-
-    	        @Override
-    	        public void onTick(long millisUntilFinished) {
-    	            
-    	            DateFormat dateFormat = new SimpleDateFormat();      
-    	            java.util.Date date = new java.util.Date();
-    	            Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
-    	            
-    	            Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
-    	            Calendar paulCal = Calendar.getInstance();paulCal.setTime(internetTimeForPaul);
-    	            
-    	            long days = daysBetween(nowCal, paulCal);
-
-    	            dateFormat = new SimpleDateFormat("HH");
-    	            date = new java.util.Date();
-    	            int hours = Math.abs(Integer.parseInt(dateFormat.format(date)) - 24);
-    	            if (hours == 24) {
-    	           	 hours = 0;
-    	           	 days++;
-    	            }
-    	            hours = hours - 1;
-
-    	            dateFormat = new SimpleDateFormat("mm");
-    	            date = new java.util.Date();
-    	            int minutes = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
-    	            if (minutes == 60) {
-    	           	 minutes = 0;
-    	           	 hours++;
-    	            }
-
-    	            dateFormat = new SimpleDateFormat("ss");
-    	            date = new java.util.Date();
-    	            int seconds = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);  
-    	            if (seconds == 60) {
-    	            	 seconds = 0;
-    	            	 minutes++;
-    	            }
-    	            if (minutes != 0 ) {minutes = minutes - 1;}
-
-    	            paulTimeLeft = String.format(" %d days\n %d hours\n %d minutes\n %d seconds\n",
-    	                days,
-    	                hours,
-    	                minutes,
-    	                seconds
-    	                );  
-
-    	            tv3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
-    	            //SimpleDateFormat dateformatYYYYMMDD = new SimpleDateFormat("yyyy MM dd \nhh mm ss");
-    	            //String testString = dateformatYYYYMMDD.format(date);
-    	            //tv.setText(paulTimeLeft + "\n" + testString);
-    	            tv3.setText(paulTimeLeft);
-    	        }
-    	    }
+        	    	    
         	}
          
     }
