@@ -10,7 +10,6 @@ import android.net.ParseException;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.app.Activity;
-import android.util.Log;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -26,7 +25,6 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -220,8 +218,7 @@ public class MainActivity extends FragmentActivity {
      	        return getArguments().getInt("index", 0);
      	    }
         	 
-        	
-			public View onCreateView(LayoutInflater inflater, ViewGroup container,
+        	 public View onCreateView(LayoutInflater inflater, ViewGroup container,
      	            Bundle savedInstanceState) {
      	        if (container == null) {
      	            // We have different layouts, and in one of them this
@@ -241,17 +238,10 @@ public class MainActivity extends FragmentActivity {
      	        //rock.setPadding(padding, padding, padding, padding);
      	        //Resources res = getResources();
      	        //Drawable rockBackground = res.getDrawable(R.drawable.pauloff_480p);
-     	        Bitmap rockBmap = BitmapFactory.decodeResource(getResources(), R.drawable.pauloff_480p);
-     	        
-     	        
+ 	            	        
      	        scroller.addView(rock);
-     	        int finalHeight = scroller.getMeasuredHeight();
-     	        int finalWidth = scroller.getMeasuredWidth();
-     	        Log.w("argh", Integer.toString(finalHeight));
-     	        Log.w("argh", Integer.toString(finalWidth));
-     	        Bitmap rockScaled = Bitmap.createScaledBitmap(rockBmap, finalWidth, finalHeight, true);
-     	        Drawable rockDrawable = new BitmapDrawable(getResources(), rockScaled);
-     	        rock.setBackground(rockDrawable);
+
+     	        rock.setBackgroundResource(R.drawable.rockdrawable);
      	        return scroller;
      	    }
         	 
