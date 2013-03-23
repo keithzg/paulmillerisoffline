@@ -37,6 +37,7 @@ public class PaulWidget extends AppWidgetProvider {
 	            //ComponentName thisWidget = new ComponentName(this, PaulWidget.class);
 	            //AppWidgetManager manager = AppWidgetManager.getInstance(this);
 	            //manager.updateAppWidget(thisWidget, updateViews);
+	            
 	        }
 
 	        @Override

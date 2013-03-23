@@ -56,7 +56,7 @@ public class MainActivity extends FragmentActivity {
 	
  	long milliseconds;
 
-    private static final int NUMBER_OF_PAGES = 3;
+    private static final int NUMBER_OF_PAGES = 2;
 
     private ViewPager mViewPager;
     private MyFragmentPagerAdapter mMyFragmentPagerAdapter;
@@ -73,7 +73,7 @@ public class MainActivity extends FragmentActivity {
          mViewPager = (ViewPager) findViewById(R.id.viewpager);
          mMyFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
          mViewPager.setAdapter(mMyFragmentPagerAdapter);
-         mViewPager.setCurrentItem(1);
+         mViewPager.setCurrentItem(0);
     }
 
     private static class MyFragmentPagerAdapter extends FragmentPagerAdapter {
@@ -90,8 +90,6 @@ public class MainActivity extends FragmentActivity {
              switch (page) {
                  case 0: return new Fragment1();
                  case 1: return new Fragment2();
-                 case 2: return new Fragment3();
-                
              }
              return null;
          } 
@@ -208,10 +206,7 @@ public class MainActivity extends FragmentActivity {
         	        		"Keith Z-G (poorly) coded this app" +
         	        		"\n" +
         	        		"\n" +
-        	        		"Images by 'OCD'" +
-        	        		"\n" +
-        	        		"\n" +
-        	        		"<- Basic | Fancy ->");
+        	        		"Images by 'OCD'");
         	        return scroller;
         	    }
         	}
