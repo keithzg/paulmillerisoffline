@@ -4,11 +4,26 @@
     android:layout_height="match_parent"
     android:padding="@dimen/default_padding">
 
+    <LinearLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pm_info"
         android:id="@+id/textView"
-        android:textSize="48sp"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:src="@drawable/github_blue"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:onClick="openGithub" />
+
+    </LinearLayout>
 </ScrollView>

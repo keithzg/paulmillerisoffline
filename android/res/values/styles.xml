@@ -14,7 +14,31 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowBackground">@drawable/bg_sepia_mottled</item>
+        <item name="android:actionBarStyle">@style/PMsActionBar</item>
+        <item name="android:textColorSecondary">@color/strong_highlight</item>
+    </style>
+
+    <style name="PMsActionBar" parent="@android:style/Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/bg_strong_mottled</item>
+    </style>
+
+    <style name="time_big">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">72sp</item>
+    </style>
+
+    <style name="time_caption">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_marginTop">-16dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>

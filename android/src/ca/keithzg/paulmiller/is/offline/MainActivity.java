@@ -1,6 +1,8 @@
 package ca.keithzg.paulmiller.is.offline;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -27,6 +29,7 @@ import java.util.TimeZone;
 public class MainActivity extends FragmentActivity {
 
 	static String paulTimeLeft;
+	static long days, hours, minutes, seconds;
 	//static TextView tv;
 
 	long milliseconds;
@@ -60,9 +63,8 @@ public class MainActivity extends FragmentActivity {
 		public Fragment getItem(int page) {
 			switch (page) {
 				case 0: return new Fragment1();
-				case 1: return new Fragment2();
+				default: return new Fragment2();
 			}
-			return null;
 		}
 
 		@Override
@@ -73,7 +75,7 @@ public class MainActivity extends FragmentActivity {
 		public class Fragment1 extends Fragment {
 
 
-			public TextView tv;
+			public TextView mDaysView, mHoursView, mMinsView, mSecsView;
 			public Fragment1 newInstance(int index) {
 				Fragment1 f = new Fragment1();
 
@@ -101,7 +103,10 @@ public class MainActivity extends FragmentActivity {
 
 				@Override
 				public void onTick(long millisUntilFinished) {
-					tv.setText(paulTimeLeft);
+					mHoursView.setText(String.valueOf(hours));
+					mDaysView.setText(String.valueOf(days));
+					mMinsView.setText(String.valueOf(minutes));
+					mSecsView.setText(String.valueOf(seconds));
 				}
 			}
 
@@ -115,8 +120,11 @@ public class MainActivity extends FragmentActivity {
 				Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
 				long ontickseconds = internetTimeForPaul.getTime();
 
-				View v = inflater.inflate(R.layout.frag_time_left, null);
-				tv = (TextView) v.findViewById(R.id.time_left);
+				View v = inflater.inflate(R.layout.frag_time_left_2, null);
+				mHoursView = (TextView) v.findViewById(R.id.numHours);
+				mMinsView = (TextView) v.findViewById(R.id.numMins);
+				mSecsView = (TextView) v.findViewById(R.id.numSeconds);
+				mDaysView = (TextView) v.findViewById(R.id.numDays);
 
 				MyCount1 counter1 = new MyCount1(ontickseconds,1000);
 				counter1.start();
@@ -125,6 +133,7 @@ public class MainActivity extends FragmentActivity {
 			}
 
 		}
+
 		public class Fragment2 extends Fragment {
 			public Fragment2 newInstance(int index) {
 				Fragment2 f = new Fragment2();
@@ -148,7 +157,9 @@ public class MainActivity extends FragmentActivity {
 					// No container, no content.
 					return null;
 				}
-				return inflater.inflate(R.layout.frag_info, null);
+				View v = inflater.inflate(R.layout.frag_info, null);
+
+				return v;
 			}
 		}
 		public class Fragment3 extends Fragment {
@@ -258,10 +269,10 @@ public class MainActivity extends FragmentActivity {
 			if (minutes != 0 ) {minutes = minutes - 1;}
 
 			paulTimeLeft = String.format(" %d days\n %d hours\n %d minutes\n %d seconds\n",
-					days,
-					hours,
-					minutes,
-					seconds
+					MainActivity.this.days = days,
+					MainActivity.this.hours = hours,
+					MainActivity.this.minutes = minutes,
+					MainActivity.this.seconds = seconds
 			);
 
 			//tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
@@ -271,6 +282,14 @@ public class MainActivity extends FragmentActivity {
 			//tv.setText(paulTimeLeft);
 			//Log.w("paulTimer: ", paulTimeLeft);
 		}
+	}
+
+	/**
+	 * Opens the Github page for the project
+	 * @param v
+	 */
+	public void openGithub(View v) {
+		startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://github.com/keithzg/paulmillerisoffline")));
 	}
 
 
