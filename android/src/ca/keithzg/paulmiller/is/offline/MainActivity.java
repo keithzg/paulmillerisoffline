@@ -249,14 +249,13 @@ public class MainActivity extends FragmentActivity {
 				hours = 0;
 				days++;
 			}
-			hours = hours - 1;
+			if (hours != 0 ) {hours = hours - 1;}
 
 			dateFormat = new SimpleDateFormat("mm");
 			date = new java.util.Date();
 			int minutes = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
 			if (minutes == 60) {
 				minutes = 0;
-				hours++;
 			}
 
 			dateFormat = new SimpleDateFormat("ss");
@@ -264,7 +263,6 @@ public class MainActivity extends FragmentActivity {
 			int seconds = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
 			if (seconds == 60) {
 				seconds = 0;
-				minutes++;
 			}
 			if (minutes != 0 ) {minutes = minutes - 1;}
 
