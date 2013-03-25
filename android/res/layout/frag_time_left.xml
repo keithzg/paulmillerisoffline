@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="New Text"-->
+        <!--android:id="@+id/time_left"-->
+        <!--android:textSize="58sp"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_marginLeft="0dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginTop="0dp" />-->
+
+        <TextView
+            android:text="N"
+            android:id="@+id/numDays"
+            style="@style/time_big" />
+
+        <TextView
+            android:text="Days"
+            style="@style/time_caption"
+            android:layout_toRightOf="@+id/numDays"
+            android:layout_alignBaseline="@+id/numDays" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:id="@+id/numHours"
+            android:layout_alignLeft="@+id/numDays"
+            android:layout_below="@+id/numDays"
+            style="@style/time_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hours"
+            android:layout_toRightOf="@+id/numHours"
+            android:layout_alignBaseline="@+id/numHours"
+            style="@style/time_caption" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:id="@+id/numMins"
+            android:layout_alignLeft="@+id/numDays"
+            android:layout_below="@+id/numHours"
+            style="@style/time_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            android:id="@+id/numSeconds"
+            android:layout_alignLeft="@+id/numDays"
+            android:layout_below="@+id/numMins"
+            style="@style/time_big" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minutes"
+            android:layout_toRightOf="@+id/numMins"
+            android:layout_alignBaseline="@+id/numMins"
+            style="@style/time_caption" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seconds"
+            android:layout_alignBaseline="@+id/numSeconds"
+            style="@style/time_caption"
+            android:layout_toRightOf="@+id/numSeconds" />
+
+    </RelativeLayout>
+
+</ScrollView>

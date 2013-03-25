@@ -3,6 +3,10 @@
 
     <string name="app_name">Paul Miller Is Offline</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hello world!</string><string name="pm_info"><![CDATA[Paul Miller is a journalist with The Verge\n\nKeith Z-G & Espian(dev) coded this app, with thanks from the community\n\nImages by OCD]]></string>
+    <string name="days">Days</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="seconds">Seconds</string>
 
 </resources>
