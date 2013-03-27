@@ -10,8 +10,10 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
+import com.nineoldandroids.animation.ObjectAnimator;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -140,12 +142,6 @@ public class MainActivity extends FragmentActivity {
 					MainActivity.seconds = seconds
 			);
 
-			//tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 58);
-			//SimpleDateFormat dateformatYYYYMMDD = new SimpleDateFormat("yyyy MM dd \nhh mm ss");
-			//String testString = dateformatYYYYMMDD.format(date);
-			//tv.setText(paulTimeLeft + "\n" + testString);
-			//tv.setText(paulTimeLeft);
-			//Log.w("paulTimer: ", paulTimeLeft);
 		}
 	}
 
@@ -162,8 +158,25 @@ public class MainActivity extends FragmentActivity {
         PopupMenu pm = new PopupMenu(this, v);
         pm.inflate(R.menu.menu_main);
 		PreferenceMenuItemHelper.associate(this, pm.getMenu(), R.id.menu_secondsToggle, "showSeconds");
+	    pm.getMenu().findItem(R.id.menu_controlledExplosion).setVisible(BuildConfig.DEBUG);
+	    pm.getMenu().findItem(R.id.menu_controlledExplosion).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+		    @Override
+		    public boolean onMenuItemClick(MenuItem item) {
+			    dealWithIt();
+			    return false;
+		    }
+	    });
         pm.show();
 
     }
+
+	public void dealWithIt() {
+		findViewById(R.id.paulsMug).setVisibility(View.VISIBLE);
+		findViewById(R.id.paulsSpecs).setVisibility(View.VISIBLE);
+		ObjectAnimator.ofFloat(findViewById(R.id.paulsMug), "alpha", 0f, 1f).start();
+		ObjectAnimator marginAnimator = ObjectAnimator.ofFloat(findViewById(R.id.paulsSpecs), "translationY",
+				-120f * getResources().getDisplayMetrics().density, 0f);
+		marginAnimator.setDuration(3000).start();
+	}
 
 }

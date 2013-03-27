@@ -6,4 +6,7 @@
         android:title="@string/show_seconds"
         android:checkable="true" />
 
+    <item android:id="@+id/menu_controlledExplosion"
+        android:title="Controlled Explosion" />
+
 </menu>
