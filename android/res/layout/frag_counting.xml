@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -8,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:text="New Text"-->
@@ -22,65 +25,78 @@
         <TextView
             android:text="N"
             android:id="@+id/numDays"
-            style="@style/time_big" />
+            style="@style/time_big"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" />
 
         <TextView
             android:text="Days"
             style="@style/time_caption"
-            android:layout_toRightOf="@+id/numDays"
-            android:layout_alignBaseline="@+id/numDays" />
+            android:layout_below="@+id/numDays"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textView" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="M"
             android:id="@+id/numHours"
-            android:layout_alignLeft="@+id/numDays"
-            android:layout_below="@+id/numDays"
-            style="@style/time_big" />
+            style="@style/time_big"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hours"
-            android:layout_toRightOf="@+id/numHours"
-            android:layout_alignBaseline="@+id/numHours"
-            style="@style/time_caption" />
+            style="@style/time_caption"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/numHours"
+            android:id="@+id/textView1" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="X"
             android:id="@+id/numMins"
-            android:layout_alignLeft="@+id/numDays"
-            android:layout_below="@+id/numHours"
-            style="@style/time_big" />
+            style="@style/time_big"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Y"
             android:id="@+id/numSeconds"
-            android:layout_alignLeft="@+id/numDays"
-            android:layout_below="@+id/numMins"
-            style="@style/time_big" />
+            style="@style/time_big"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Minutes"
-            android:layout_toRightOf="@+id/numMins"
-            android:layout_alignBaseline="@+id/numMins"
-            style="@style/time_caption" />
+            style="@style/time_caption"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/numMins" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seconds"
-            android:layout_alignBaseline="@+id/numSeconds"
             style="@style/time_caption"
-            android:layout_toRightOf="@+id/numSeconds" />
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/numSeconds" android:id="@+id/secondsCaption"/>
 
     </RelativeLayout>
 
 </ScrollView>
+    <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/overflow_fake" android:src="@drawable/ic_menu_moreoverflow_normal_holo_light"
+            android:background="?android:attr/selectableItemBackground" android:layout_alignParentLeft="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:onClick="overflow"/>
+</RelativeLayout>

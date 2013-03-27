@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <RelativeLayout android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="New Text"-->
+            <!--android:id="@+id/time_left"-->
+            <!--android:textSize="58sp"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_marginLeft="0dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginTop="0dp" />-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/daysLayout"
+                android:baselineAligned="true"
+                android:gravity="bottom"
+                android:layout_centerVertical="true"
+                android:minWidth="120dp">
+
+                <TextView
+                    android:text="N"
+                    android:id="@+id/numDays"
+                    style="@style/time_big"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true" />
+
+                <TextView
+                    android:text="D"
+                    style="@style/time_caption"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_toRightOf="@+id/numDays"
+                    android:layout_alignBaseline="@+id/numDays" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/hoursLayout"
+                android:layout_toRightOf="@+id/daysLayout"
+                android:baselineAligned="true"
+                android:gravity="bottom"
+                android:layout_centerVertical="true"
+                android:minWidth="120dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M"
+                    android:id="@+id/numHours"
+                    style="@style/time_big"
+                    android:layout_alignBaseline="@+id/numDays"
+                    android:layout_toRightOf="@+id/textView" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="H"
+                    style="@style/time_caption"
+                    android:id="@+id/textView1"
+                    android:layout_toRightOf="@+id/numHours"
+                    android:layout_alignBaseline="@+id/numDays" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/minsLayout"
+                android:layout_toRightOf="@+id/hoursLayout"
+                android:baselineAligned="true"
+                android:gravity="bottom"
+                android:layout_centerVertical="true"
+                android:minWidth="120dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:id="@+id/numMins"
+                    style="@style/time_big"
+                    android:layout_alignBaseline="@+id/numDays"
+                    android:layout_toRightOf="@+id/textView1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="M"
+                    style="@style/time_caption"
+                    android:id="@+id/textView2"
+                    android:layout_toRightOf="@+id/numMins"
+                    android:layout_alignBaseline="@+id/numDays" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/secsLayout"
+                android:layout_toRightOf="@+id/minsLayout"
+                android:baselineAligned="true"
+                android:gravity="bottom"
+                android:layout_centerVertical="true"
+                android:minWidth="120dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Y"
+                    android:id="@+id/numSeconds"
+                    style="@style/time_big"
+                    android:layout_alignBaseline="@+id/numDays"
+                    android:layout_toRightOf="@+id/textView2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S"
+                    style="@style/time_caption"
+                    android:id="@+id/secondsCaption"
+                    android:layout_alignBaseline="@+id/numDays"
+                    android:layout_toRightOf="@+id/numSeconds" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </HorizontalScrollView>
+
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/overflow_fake" android:src="@drawable/ic_menu_moreoverflow_normal_holo_light"
+        android:background="?android:attr/selectableItemBackground" android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true" android:layout_alignParentRight="true" android:onClick="overflow"/>
+</RelativeLayout>
