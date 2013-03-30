@@ -138,11 +138,11 @@ The invalidity or unenforceability of any provision of this License
 
 ## 15. Definitions
 
-    "Copyleft-Next Project" means the project that maintains the source
+"Copyleft-Next Project" means the project that maintains the source
     code repository at <https://gitorious.org/copyleft-next/> as of the
     release date of this License.
 
-    "Corresponding Source" of a Covered Work in Object Code form means (i)
+"Corresponding Source" of a Covered Work in Object Code form means (i)
     the Source Code form of the Covered Work; (ii) all scripts,
     instructions and similar information that are reasonably necessary for
     a skilled developer to generate the Covered Work from the Source Code
@@ -152,20 +152,20 @@ The invalidity or unenforceability of any provision of this License
     example, a specified proprietary compiler including its version
     number). Corresponding Source must be machine-readable.
 
-    "Covered Work" means My Work or a Derived Work.
+"Covered Work" means My Work or a Derived Work.
 
-    "Derived Work" means a work of authorship that copies from, modifies,
+"Derived Work" means a work of authorship that copies from, modifies,
     adapts, is based on, is a derivative work of, transforms, translates or
     contains all or part of My Work, such that copyright permission is
     required. Derived Works do not include Mere Aggregation or a mere
     reproduction of My Work.
 
-    "Distribute" means to distribute, transfer or make a copy available to
+"Distribute" means to distribute, transfer or make a copy available to
     someone else, such that copyright permission is required.
 
-    "Distributor" means Me and anyone else who Distributes a Covered Work.
+"Distributor" means Me and anyone else who Distributes a Covered Work.
 
-    "I"/"Me"/"My" refers to the individual or legal entity that places My
+"I"/"Me"/"My" refers to the individual or legal entity that places My
     Work under this License. "You"/"Your" refers to the individual or legal
     entity exercising rights in My Work under this License. A legal entity
     includes each entity that controls, is controlled by, or is under
@@ -174,24 +174,24 @@ The invalidity or unenforceability of any provision of this License
     otherwise, or (b) ownership of more than fifty percent of the
     outstanding shares or beneficial ownership of such legal entity.
 
-    "Licensed Patents" means all patent claims licensable by Me, now or in
+"Licensed Patents" means all patent claims licensable by Me, now or in
     the future, that are necessarily infringed by making, using, or selling
     My Work, and excludes claims that would be infringed only as a
     consequence of further modification of My Work.
 
-    "Mere Aggregation" means an aggregation of a Covered Work with a
+"Mere Aggregation" means an aggregation of a Covered Work with a
     Separate Work.
 
-    "My Work" means the particular work of authorship I license to You
+"My Work" means the particular work of authorship I license to You
     under this License.
 
-    "Object Code" means any form of a work that is not Source Code.
+"Object Code" means any form of a work that is not Source Code.
 
-    "Separate Work" means a work that is separate from and independent of a
+"Separate Work" means a work that is separate from and independent of a
     particular Covered Work and is not by its nature an extension or
     enhancement of the Covered Work, and/or a runtime library, standard
     library or similar component that is used to generate an Object Code
     form of a Covered Work.
 
-    "Source Code" means the preferred form of a work for making
+"Source Code" means the preferred form of a work for making
     modifications to it.
