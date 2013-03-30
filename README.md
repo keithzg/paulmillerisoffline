@@ -11,7 +11,7 @@ Turns out any old schmuck can go publish stuff on Google Play, as evidenced by h
 
 The code in this project is dual-licensed, albeit under a pair of compatible licenses. 
 
-Firstly is is available under the GNU General Public License version 3 ("GPLv3"), with the "or later" clause. A copy of the GPL is available in this source repository.
+Firstly it is available under the GNU General Public License version 3 ("GPLv3"), with the "or later" clause. A copy of the GPL is available in this source repository.
 
 The code is also exlicitly licensed under copyleft-next 0.2.0 or later. Although in principle this shouldn't matter since copyleft-next is GPL compatible, it seemed reasonable to explicitly dual-license. 
 
