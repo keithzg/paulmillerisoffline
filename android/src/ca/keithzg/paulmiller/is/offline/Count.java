@@ -5,11 +5,9 @@ import java.util.TimerTask;
 public class Count extends TimerTask{
 
 	private Long remSec;
-	private ApiConnector ac = null;
 	public Count(Long sec)
 	{
 		this.remSec = sec;
-		ac = new ApiConnector();
 	}
 	
 	@Override
