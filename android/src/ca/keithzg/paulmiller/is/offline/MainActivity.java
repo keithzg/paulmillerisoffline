@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
@@ -20,6 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.Timer;
+import java.util.concurrent.ExecutionException;
 
 @SuppressLint("ValidFragment")
 public class MainActivity extends FragmentActivity {
@@ -34,18 +37,42 @@ public class MainActivity extends FragmentActivity {
 
 	public void onCreate(Bundle savedInstanceState) {
 
-		Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
-		milliseconds = internetTimeForPaul.getTime();
-
-		MyCount counter = new MyCount(milliseconds,1000);
-		counter.start();
+		ApiConnector ac = new ApiConnector();
+		Long remSec = null;
+		try {
+			remSec = ac.execute("http://pauldown.genicus.be/seconds.php").get();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+		
+		if(remSec == null)
+		{
+			Log.d("MainActivity", "Seconds is null, calculating");
+			TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
+			
+			Long now = System.currentTimeMillis()/1000;
+			
+			Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
+			Long online = internetTimeForPaul.getTime()/1000;
+					
+			remSec = online - now;
+		}
+		Count c = new Count(remSec);
+		
+		Timer t = new Timer();
+		t.schedule(c, 0, 1000);
+		
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
         ViewPager mViewPager = (ViewPager) findViewById(R.id.viewpager);
         MyFragmentPagerAdapter mMyFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
 		mViewPager.setAdapter(mMyFragmentPagerAdapter);
 		mViewPager.setCurrentItem(0);
-
+		
+		
 	}
 
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
@@ -83,64 +110,6 @@ public class MainActivity extends FragmentActivity {
 			daysBetween = daysBetween - 1;
 		}
 		return daysBetween;
-	}
-
-	// countdowntimer is an abstract class, so extend it and fill in methods
-	public class MyCount extends CountDownTimer {
-
-		public MyCount(long millisInFuture, long countDownInterval) {
-			super(millisInFuture, countDownInterval);
-		}
-
-		@Override
-		public void onFinish() {
-		}
-
-		@Override
-		public void onTick(long millisUntilFinished) {
-
-			TimeZone.setDefault(TimeZone.getTimeZone("America/New_York"));
-			DateFormat dateFormat = new SimpleDateFormat();
-			java.util.Date date = new java.util.Date();
-			Calendar nowCal = Calendar.getInstance();nowCal.setTime(date);
-
-			Date internetTimeForPaul = new Date("05/01/2013 00:00:00");
-			Calendar paulCal = Calendar.getInstance();paulCal.setTime(internetTimeForPaul);
-
-			long days = daysBetween(nowCal, paulCal);
-
-			dateFormat = new SimpleDateFormat("HH");
-			date = new java.util.Date();
-			int hours = Math.abs(Integer.parseInt(dateFormat.format(date)) - 24);
-			if (hours == 24) {
-				hours = 0;
-				days++;
-			}
-			if (hours != 0 ) {hours = hours - 1;}
-
-			dateFormat = new SimpleDateFormat("mm");
-			date = new java.util.Date();
-			int minutes = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
-			if (minutes == 60) {
-				minutes = 0;
-			}
-
-			dateFormat = new SimpleDateFormat("ss");
-			date = new java.util.Date();
-			int seconds = Math.abs(Integer.parseInt(dateFormat.format(date)) - 60);
-			if (seconds == 60) {
-				seconds = 0;
-			}
-			if (minutes != 0 ) {minutes = minutes - 1;}
-
-			paulTimeLeft = String.format(" %d days\n %d hours\n %d minutes\n %d seconds\n",
-					MainActivity.days = days,
-					MainActivity.hours = hours,
-					MainActivity.minutes = minutes,
-					MainActivity.seconds = seconds
-			);
-
-		}
 	}
 
 	/**
