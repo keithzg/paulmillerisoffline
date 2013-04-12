@@ -10,8 +10,6 @@ import com.google.android.apps.dashclock.api.DashClockExtension;
 import com.google.android.apps.dashclock.api.ExtensionData;
 
 public class PaulDashClock extends DashClockExtension {
-    private static final String TAG = "ExampleExtension";
-    public static final String PREF_NAME = "pref_name";
 	@Override
 	protected void onUpdateData(int reason) {
         // Get the time left.
@@ -48,7 +46,7 @@ public class PaulDashClock extends DashClockExtension {
 	        .status(remSec<=0?"Online":"Offline")
 	        .expandedTitle(String.format("Paul Miller is %s",remSec<=0?"Online":"Offline"))
 	        .expandedBody(String.format("%d Days %d Hours %d Minutes",
-	        		MainActivity.days, MainActivity.hours, MainActivity.minutes)));
+	        		days, hours, minutes)));
 	}
 	
 	protected void onInitialize(boolean isReconnect) {
