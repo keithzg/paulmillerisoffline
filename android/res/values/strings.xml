@@ -3,11 +3,13 @@
 
     <string name="app_name">Paul Miller Is Offline</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string><string name="pm_info"><![CDATA[Paul Miller is a journalist with The Verge, and you can follow his offline journey here.\n\nKeith Z-G & Alex Curran coded this app, with thanks from the community.\n\nImages by OCD]]></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="pm_info"><![CDATA[Paul Miller is a journalist with The Verge, and you can follow his offline journey here.\n\nKeith Z-G & Alex Curran coded this app, with thanks from the community.\n\nImages by OCD]]></string>
     <string name="days">Days</string>
     <string name="hours">Hours</string>
     <string name="minutes">Minutes</string>
     <string name="seconds">Seconds</string>
     <string name="show_seconds">Show seconds</string>
+    <string name="extension_description">Displays the remaining time in journalist Paul Miller\'s self-imposed exile from the internet.</string>
 
 </resources>
