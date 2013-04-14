@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MM"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="23dp" />
 
             <TextView
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Minutes"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="10dp" />
 
         </LinearLayout>
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HH"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="23dp" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hours"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="10dp" />
 
         </LinearLayout>
@@ -96,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="DD:"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="40dp" />
 
             <TextView
@@ -104,7 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Days"
-                android:textColor="#FFFFFF"
+                android:textColor="#e5e5e5"
                 android:textSize="15dp" />
         </LinearLayout>
 
