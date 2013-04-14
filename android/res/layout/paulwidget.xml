@@ -1,27 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_wrapper"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-    <ImageView
-        android:id="@+id/myImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@drawable/rockwidget" />
- 
-    <TextView
-        android:layout_width="wrap_content" 
-        android:layout_height="wrap_content" 
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal|bottom"
 
-        android:padding="12dp"
-        
-        
-        android:textColor="#ede6d7"
-        
-        android:text="For now this widget doesn't work.\nBut hey, doesn't it look like it'll be cool?" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical|fill_horizontal" >
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </RelativeLayout>
 
-</FrameLayout>
+        <LinearLayout
+            android:id="@+id/mmw"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/day"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MM"
+                android:textColor="#FFFFFF"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minutes"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/hhw"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/day"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HH"
+                android:textColor="#FFFFFF"
+                android:textSize="23dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hours"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ddw"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="0dp"
+            android:background="@drawable/day"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DD:"
+                android:textColor="#FFFFFF"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Days"
+                android:textColor="#FFFFFF"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
