@@ -1,17 +1,23 @@
 /*Copyright 2013 Matej Čurilla (sarriel)
 * 
-* This file is part of Paul (com.sarriel.paul).
+* This code is originally from Paul (com.sarriel.paul).
+*
+* Keith Zubot-Gephart received permission from Matej Čurilla to bump the
+* license version.
 * 
 * Paul is free software: you can redistribute it and/or modify it under
 * the terms of the GNU General Public License as published by the
-* Free Software Foundation, version 2 of the License.
+* Free Software Foundation, version 3 or or any later version of the 
+* License, or copyleft-next 0.2.1. 
 * 
 * Paul is distributed in the hope that it will be useful,but
 * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 * or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
 * more details.
 * 
-* See http://www.gnu.org/licenses/gpl-2.0.html .
+* See http://www.gnu.org/licenses/gpl-3.0.html
+* Alternatively, you should have received a copy of copyleft-next 0.2.1 with
+* this source repository.
 */
 
 package ca.keithzg.paulmiller.is.offline;
